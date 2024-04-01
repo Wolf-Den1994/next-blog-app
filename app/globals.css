@@ -1,5 +1,6 @@
 :root {
   --color-main: #d4ffca;
+  --color-text: #184455;
   --color-bg: #3e6bc0;
   --color-active: #07a17b;
 }
@@ -25,7 +26,7 @@ main {
 
 a {
   text-decoration: none;
-  color: var(--color-main);
+  color: var(--color-text);
 }
 
 a:hover {
@@ -51,4 +52,5 @@ header {
 
 header a {
   padding: 20px;
+  color: var(--color-main);
 }
