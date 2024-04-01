@@ -1,6 +1,14 @@
+import { Metadata } from "next"
+
 type Props = {
   params: {
     id: string
+  }
+}
+
+export function generateMetadata({ params: { id } }: Props): Metadata {
+  return {
+    title: id,
   }
 }
 
