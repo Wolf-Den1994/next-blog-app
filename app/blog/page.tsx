@@ -8,6 +8,11 @@ async function getData(): Promise<Post[]> {
       revalidate: 60, // 1min
     }
   });
+
+  if (!response.ok) {
+    throw new Error('Unable to fetch!')
+  }
+
   return response.json();
 }
 
