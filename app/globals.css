@@ -54,3 +54,32 @@ header a {
   padding: 20px;
   color: var(--color-main);
 }
+
+form {
+  margin: 12px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  padding: 8px 8px 8px 15px;
+  font-size: 17px;
+}
+
+button[type=submit] {
+  font-size: 17px;
+  background-color: var(--color-bg);
+  color: var(--color-main);
+  cursor: pointer;
+  transition: all 0.3s;
+  height: 40px;
+  border: none;
+  outline: none;
+  padding: 5px;
+}
+
+button[type=submit]:hover {
+  background-color: var(--color-active);
+  color: var(--color-text);
+}
