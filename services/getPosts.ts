@@ -1,5 +1,5 @@
 export const getAllPosts = async () => {
-  const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+  const response = await fetch('/api/posts', {
     // next: {
       // revalidate: 60, // 1min
     // }
@@ -13,7 +13,7 @@ export const getAllPosts = async () => {
 }
 
 export const getPostsBySearch = async (search: string) => {
-  const response = await fetch(`https://jsonplaceholder.typicode.com/posts?q=${search}`, {
+  const response = await fetch(`/api/posts?q=${search}`, {
     // next: {
       // revalidate: 60, // 1min
     // }
