@@ -1,33 +1,27 @@
 'use client';
 
-import { getAllPosts } from "@/services/getPosts";
-// import { usePosts } from "@/store";
+// import { getAllPosts } from "@/services/getPosts";
+import { usePosts } from "@/store";
 import Link from "next/link";
-import useSWR from "swr";
-// import { useEffect } from "react";
-// import { shallow } from "zustand/shallow";
-
-type Post = {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
-}
+// import useSWR from "swr";
+import type { Post } from "@/types/post"
+import { useEffect } from "react";
+import { shallow } from "zustand/shallow";
 
 const Posts = () => {
-  const { data: posts, isLoading } = useSWR('posts', getAllPosts);
+  // const { data: posts, isLoading } = useSWR('posts', getAllPosts);
 
-  // const [posts, loading, getAllPosts] = usePosts(
-  //   (state) => [state.posts, state.loading, state.getAllPosts],
-  //   shallow
-  // )
+  const [posts, loading, getAllPosts] = usePosts(
+    (state) => [state.posts, state.loading, state.getAllPosts],
+    shallow
+  )
 
-  // useEffect(() => {
-  //   getAllPosts()
-  // }, [])
+  useEffect(() => {
+    getAllPosts()
+  }, [])
 
   return (
-    isLoading
+    loading
       ? <h3>Loading...</h3>
       : (
         <ul>

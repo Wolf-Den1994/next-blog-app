@@ -1,11 +1,5 @@
 import { Metadata } from "next"
-
-type Post = {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
-}
+import type { Post } from "@/types/post"
 
 async function getData(id: string): Promise<Post> {
   const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
