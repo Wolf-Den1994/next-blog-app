@@ -2,6 +2,15 @@
 
 import { signIn } from "next-auth/react"
 import { useSearchParams } from "next/navigation"
+import { Suspense } from 'react'
+
+const RedditSuspense = () => {
+  return (
+    <Suspense>
+      <RedditButton />
+    </Suspense>
+  )
+}
 
 const RedditButton = () => {
   const searchParams = useSearchParams();
@@ -14,4 +23,4 @@ const RedditButton = () => {
   )
 }
 
-export { RedditButton }
+export { RedditSuspense }
