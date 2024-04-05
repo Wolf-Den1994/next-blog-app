@@ -1,19 +1,18 @@
+import { getAllPosts, getData } from "@/services/jsonplaceholder"
 import { Metadata } from "next"
-import type { Post } from "@/types/post"
-
-async function getData(id: string): Promise<Post> {
-  const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
-    next: {
-      revalidate: 60, // 1min
-    }
-  });
-  return response.json();
-}
 
 type Props = {
   params: {
     id: string
   }
+}
+
+export async function generateStaticParams() {
+  const posts = await getAllPosts()
+
+  return posts.map((post) => ({
+    slug: post.id.toString(),
+  }))
 }
 
 export async function generateMetadata({ params: { id } }: Props): Promise<Metadata> {
