@@ -26,7 +26,7 @@ const SignInForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="login-form">
+    <form onSubmit={handleSubmit} className="content-form">
       <input type="email" name="email" required />
       <input type="password" name="password" required />
       <button type="submit">Sign in</button>
