@@ -102,3 +102,8 @@ button:hover {
   display: grid;
   gap: 10px;
 }
+
+hr {
+  margin: 50px auto;
+  width: 70%;
+}
