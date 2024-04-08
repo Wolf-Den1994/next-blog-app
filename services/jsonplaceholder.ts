@@ -1,4 +1,4 @@
-import type { Post } from "@/types/post"
+import type { Post, Photo } from "@/types/post"
 
 export async function getAllPosts(): Promise<Post[]> {
   const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
@@ -28,6 +28,13 @@ export async function getPostsBySearch(search: string) {
   if (!response.ok) {
     throw new Error('Unable to fetch!')
   }
+}
 
+export async function getPhotos(): Promise<Photo[]> {
+  const response = await fetch('https://jsonplaceholder.typicode.com/photos?_start=0&_limit=10', {
+    next: {
+      revalidate: 60, // 1min
+    }
+  })
   return response.json();
 }

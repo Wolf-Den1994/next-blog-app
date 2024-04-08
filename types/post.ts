@@ -4,3 +4,11 @@ export type Post = {
   title: string;
   body: string;
 }
+
+export type Photo = {
+  id: number;
+  albumId: number;
+  title: string;
+  url: string;
+  thumbnailUrl: string;
+}
