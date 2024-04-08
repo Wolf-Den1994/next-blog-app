@@ -67,6 +67,11 @@ input {
   font-size: 17px;
 }
 
+textarea {
+  padding: 8px 8px 8px 15px;
+  font-size: 17px;
+}
+
 button {
   font-size: 17px;
   background-color: var(--color-bg);
@@ -84,7 +89,7 @@ button:hover {
   color: var(--color-text);
 }
 
-.login {
+.content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -93,7 +98,7 @@ button:hover {
   font-size: 18px;
 }
 
-.login-form {
+.content-form {
   display: grid;
   gap: 10px;
 }

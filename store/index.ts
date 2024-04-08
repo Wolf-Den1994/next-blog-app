@@ -1,6 +1,6 @@
-import { getAllPosts, getPostsBySearch } from '@/services/getPosts';
 import {create} from 'zustand';
 import type { Post } from "@/types/post"
+import { getAllPosts, getPostsBySearch } from '@/services/jsonplaceholder';
 
 type UsePosts = {
   posts: Post[];

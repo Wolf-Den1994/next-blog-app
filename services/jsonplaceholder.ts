@@ -17,3 +17,17 @@ export async function getData(id: string): Promise<Post> {
   });
   return response.json();
 }
+
+export async function getPostsBySearch(search: string) {
+  const response = await fetch(`https://jsonplaceholder.typicode.com/posts?q=${search}`, {
+    // next: {
+      // revalidate: 60, // 1min
+    // }
+  });
+
+  if (!response.ok) {
+    throw new Error('Unable to fetch!')
+  }
+
+  return response.json();
+}
