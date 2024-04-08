@@ -1,6 +1,7 @@
 import { getAllPosts, getData } from "@/services/jsonplaceholder"
 import { Metadata } from "next"
 import { revalidatePath } from "next/cache"
+import Link from "next/link"
 import { redirect } from "next/navigation"
 
 type Props = {
@@ -46,5 +47,7 @@ export default async function Post({ params: { id } }: Props) {
     <form action={removePosts.bind(null, id)}>
       <input type="submit" value="delete post" />
     </form>
+
+    <Link href={`/blog/${id}/edit`}>Edit</Link>
   </>
 }
